@@ -1,0 +1,18 @@
+<div
+  class="uploader"
+  nxlpUpload
+  (upload)="uploadFile($event)"
+  (click)="promptFile()"
+  (drag)="highlight($event)"
+  #uploader
+>
+  <input
+    type="file"
+    #fileInput
+    id="fileInput"
+    (change)="uploadFile($event.target.files)"
+  />
+  <tdn-ui-icon name="upload"></tdn-ui-icon> Drag and drop your files or click to
+  upload
+  <p *ngIf="maxSize">Max Upload Size: {{ maxSize }}kb</p>
+</div>

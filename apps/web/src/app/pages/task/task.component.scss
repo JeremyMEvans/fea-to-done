@@ -1,0 +1,19 @@
+@import '../../../css/style-guide.scss';
+
+.task {
+  @media (min-width: map-get($breakpoints, 'medium')) {
+    padding: 4em;
+  }
+
+  .thumbnail {
+    height: 136px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+  }
+
+  label:not(:nth-child(1)) {
+    margin-top: 1em;
+  }
+}

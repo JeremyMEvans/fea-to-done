@@ -1,0 +1,29 @@
+.uploader {
+  border: 1px dashed var(--app-border-color);
+  padding: 0.5em 2em;
+  color: var(--app-text-secondary);
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.2s;
+
+  &.over {
+    background-color: rgba(103, 88, 243, 0.5);
+    color: var(--color-neutral-100);
+  }
+
+  tdn-ui-icon {
+    margin-right: 0.5em;
+  }
+
+  input {
+    width: 0;
+  }
+
+  p {
+    font-size: 10px;
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+}

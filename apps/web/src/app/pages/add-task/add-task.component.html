@@ -1,0 +1,95 @@
+<nxlp-header [task]="task" (changeTask)="changeTask($event)"></nxlp-header>
+<div class="container">
+  <div class="card">
+
+    <!-- form: task name -->
+    <div class="form-group">
+      <label for="title">Task Name<sup>*</sup></label>
+      <input
+        type="text"
+        name="title"
+        #name
+        required
+        class="form-group"
+        [(ngModel)]="task.title"
+      />
+    </div>
+
+    <!-- form: thumbnail-->
+    <div class="form-group">
+      <label for="thumb">Thumbnail</label>
+      <nxlp-uploader
+        (uploaded)="storeThumb($event)"
+        maxSize="700"
+      ></nxlp-uploader>
+      <ng-container *ngIf="task.img || uploadedImage">
+        <label>Preview</label>
+        <img class="preview" *ngIf="uploadedImage" src="{{ uploadedImage }}" />
+        <img
+          class="preview"
+          *ngIf="task.img && !uploadedImage"
+          src="{{ task.img }}"
+        />
+      </ng-container>
+    </div>
+
+    <!-- form: description -->
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        name="description"
+        class="form-group"
+        [(ngModel)]="task.description"
+      ></textarea>
+    </div>
+
+    <!-- form: tags -->
+    <div class="form-group">
+      <label for="labels">Labels</label>
+      <div class="label-component">
+          
+        <!-- form: tags (selected -->
+        <ul class="tags" *ngIf="task.tags && task.tags.length > 0">
+          <li *ngFor="let tag of task.tags">
+            <span [class]="'tag bg-color-' + tag.color" (click)="removeTag(tag)"
+              >{{ tag.label }}<tdn-ui-icon name="x" size="xs"></tdn-ui-icon
+            ></span>
+          </li>
+        </ul>
+        
+        <!-- form: tags (unselected) -->
+        <ul class="pool" *ngIf="remainingTags && remainingTags.length > 0">
+          <li
+            *ngFor="let tag of remainingTags"
+            (click)="addTag(tag)"
+            class="option"
+          >
+            <span [class]="'icon bg-color-' + tag.color"></span>{{ tag.label }}
+          </li>
+        </ul>
+      </div><!-- label-component -->
+    </div><!-- form-group -->
+
+    <!-- form: due date -->
+    <div class="form-group">
+      <label for="dueDate">Due Date</label>
+      <div class="date-container">
+        <tdn-ui-icon name="calendar" size="m"></tdn-ui-icon>
+        <input
+          type="date"
+          class="form-group"
+          name="dueDate"
+          id="task-due-date"
+          (change)="onDueDateChange($event)"
+          [ngModel]="formattedDate | date:'yyyy-MM-dd'"
+        />
+      </div>
+    </div>
+
+    <!-- form: notes -->
+    <div class="form-group">
+      <label for="notes">Notes</label>
+      <textarea name="notes" [(ngModel)]="task.notes"></textarea>
+    </div>
+  </div><!-- card -->
+</div><!-- container -->

@@ -1,0 +1,15 @@
+<header>
+  <!-- logo & Home -->
+  <div>
+    <tdn-ui-icon
+      name="logo"
+      size="l"
+      color="color-green"
+      role="img"
+      (click)="navigation.goToTasks()"
+    ></tdn-ui-icon>
+    <span class="app-title">{{ appTitle }}</span>
+  </div>
+  <!-- nav -->
+  <nxlp-nav #navigation (navEvent)="navEvent($event)" [isCompleted]="isCompleted"></nxlp-nav>
+</header>

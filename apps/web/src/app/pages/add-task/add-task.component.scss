@@ -1,0 +1,100 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  input,
+  textarea {
+    padding: 1em;
+    border: 1px solid var(--app-border-color);
+    border-radius: 4px;
+    color: var(--app-text-primary);
+    font-family: var(--app-font-family);
+    resize: none;
+
+    &.check {
+      border-color: var(--app-state-color-danger);
+    }
+
+    &:focus {
+      border-color: var(--app-state-color-focus);
+    }
+  }
+
+  .date-container {
+    padding: 1em;
+    border: 1px solid var(--app-border-color);
+    border-radius: 4px;
+    display: flex;
+    transition: all 0.2s;
+
+    &:focus {
+      border-color: var(--app-state-color-focus);
+
+      tdn-ui-icon {
+        color: var(--app-state-color-focus);
+      }
+    }
+
+    input {
+      padding: initial;
+      border: none;
+      border-radius: 0;
+      outline: none;
+    }
+
+    tdn-ui-icon {
+      color: var(--app-text-secondary);
+      margin-right: 0.5em;
+    }
+  }
+
+  textarea {
+    min-height: 95px;
+  }
+
+  .preview {
+    max-width: 100px;
+    margin-bottom: 1em;
+  }
+
+  .tag {
+    cursor: pointer;
+    tdn-ui-icon {
+      margin-left: 1em;
+    }
+  }
+
+  ul.tags {
+    border: 1px solid var(--app-border-color);
+    padding: 1em;
+    border-radius: 4px;
+    margin-top: 0;
+
+    .tag {
+      padding: 0.4em 1em;
+    }
+  }
+
+  ul.pool {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+
+    li.option {
+      display: flex;
+      align-items: center;
+      margin: 0.5em;
+      cursor: pointer;
+
+      .icon {
+        border-radius: 4px;
+        margin-right: 0.5em;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+#dueDate {
+  cursor: pointer;
+}

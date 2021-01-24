@@ -1,0 +1,23 @@
+<!-- if the url === <root>/tasks -->
+<ng-container *ngIf="baseUrl === 'tasks'">
+  <nxlp-button color="green" text="Add Task" icon="add" (click)="addTask()"></nxlp-button>
+</ng-container>
+
+<!-- if the url === <root>/task/:id -->
+<ng-container *ngIf="baseUrl === 'task'">
+  <ng-container *ngIf="isCompleted !== true else goBack">
+    <nxlp-button color="clear" text="Edit" (click)="editTask()"></nxlp-button>
+    <nxlp-button color="green" text="Mark as Complete" (click)="onCompleteTask()"></nxlp-button>
+  </ng-container>
+
+  <ng-template #goBack>
+    <nxlp-button color="clear" text="Back to Tasks" (click)="goToTasks()"></nxlp-button>
+  </ng-template>
+</ng-container>
+
+<!-- if (the url === <root>/add) or (the url === <root>/edit/:id) -->
+<ng-container *ngIf="['add', 'edit'].includes(baseUrl)">
+  <nxlp-button color="clear" text="Cancel" (click)="goToPrevPage()"></nxlp-button>
+  <nxlp-button color="red" text="Delete" (click)="onDeleteTask()"></nxlp-button>
+  <nxlp-button color="green" text="Save" (click)="onUpdateTask()"></nxlp-button>
+</ng-container>

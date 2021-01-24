@@ -1,0 +1,41 @@
+@import '../../../css/style-guide.scss';
+
+.tasks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  width: 100%;
+  padding-left: 0;
+  column-gap: 1em;
+  row-gap: 1em;
+  justify-content: center;
+
+  .task {
+    border-radius: 4px;
+    list-style: none;
+    background: var(--app-bg-color-secondary);
+    padding: 1em;
+    border: 1px solid var(--app-border-color);
+    cursor: pointer;
+
+    div.thumbnail {
+      height: 90px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 4px;
+      margin-bottom: 1em;
+      background-image: url("../../../assets/img/default.png");
+    }
+
+    .title {
+      margin-bottom: 0.5em;
+      font-family: 'Roboto Medium';
+      font-size: map-get($font-size, 'lg');
+    }
+
+    p.description {
+      color: var(--app-text-secondary);
+      margin-bottom: 0.5em;
+    }
+  }
+}

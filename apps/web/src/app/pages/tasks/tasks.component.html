@@ -1,0 +1,37 @@
+<nxlp-header></nxlp-header>
+<div class="container">
+  <!-- task-cards -->
+  <ul class="tasks">
+    <li
+      class="task"
+      *ngFor="let task of tasks"
+      [routerLink]="['/task/' + task.id]"
+    >
+    
+      <!-- task-cards:thumbnail -->
+      <div
+        class="thumbnail"
+        [style]="{
+          'background-image': task.img ? 'url(' + task.img + ')' : ''
+        }"
+      ></div>
+
+      <!-- task-cards:tags -->
+      <ul *ngIf="task.tags" class="tags">
+        <li *ngFor="let tag of task.tags">
+          <span [class]="'tag ' + 'bg-color-'+tag.color">{{
+            tag.label
+          }}</span>
+        </li>
+      </ul>
+
+      <!-- task-cards:text-->
+      <p class="title">{{ task.title }}</p>
+      <p class="description" *ngIf="task.description">{{ task.description }}</p>
+      <p class="date">
+        <tdn-ui-icon name="calendar" size="m"></tdn-ui-icon
+        >{{ task.due | date: 'M/d/yyyy' }}
+      </p>
+    </li>
+  </ul>
+</div>

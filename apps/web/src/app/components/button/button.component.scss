@@ -1,0 +1,45 @@
+.button {
+  height: 36px;
+  padding: 0 1em;
+  border: 2px solid;
+  border-color: var(--app-border-color);
+  border-radius: 4px;
+  background: transparent;
+  margin: 1em 0.5em;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto Medium';
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: var(--color-neutral-50);
+    background: var(--color-neutral-50);
+  }
+
+  tdn-ui-icon {
+    margin-right: 0.5em;
+  }
+}
+
+.green-button {
+  background: var(--color-green);
+  color: var(--color-neutral-100);
+  border-color: var(--color-green);
+
+  &:hover {
+    background: var(--color-green-shade);
+    border-color: var(--color-green-shade);
+  }
+}
+
+.red-button {
+  background: var(--app-state-color-danger);
+  color: var(--color-neutral-100);
+  border-color: var(--app-state-color-danger);
+
+  &:hover {
+    background: var(--color-red-shade);
+    border-color: var(--color-red-shade);
+  }
+}

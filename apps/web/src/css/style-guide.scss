@@ -1,0 +1,22 @@
+// Variables (referencing those in the styleguide for this project)
+
+$font-size: (
+  sm: 12px,
+  md: 14px,
+  lg: 16px,
+  xg: 20px,
+);
+
+// Task tag colors
+.bg-color-purple {background: var(--color-purple);}
+.bg-color-orange {background: var(--color-orange);}
+.bg-color-blue {background: var(--color-blue);}
+.bg-color-green {background: var(--color-green);}
+
+// Display widths
+$breakpoints: (
+  small: '480px',
+  medium: '768px',
+  large: '1024px',
+  x-large: '1280px',
+);

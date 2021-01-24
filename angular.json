@@ -38,7 +38,9 @@
                 "output": "icons"
               }
             ],
-            "styles": ["apps/web/src/styles.scss"],
+            "styles": [
+              "apps/web/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -97,7 +99,10 @@
               "apps/web/tsconfig.spec.json",
               "apps/web/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/web/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/web/**/*"
+            ]
           }
         },
         "test": {
@@ -130,8 +135,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/web-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/web-e2e/**/*"]
+            "tsConfig": [
+              "apps/web-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/web-e2e/**/*"
+            ]
           }
         }
       }
@@ -211,7 +221,8 @@
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "e7788a07-d643-451c-8b7d-015fc47ca30d"
   },
   "schematics": {
     "@nrwl/workspace": {
