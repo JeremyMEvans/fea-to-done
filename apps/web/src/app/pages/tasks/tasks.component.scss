@@ -36,6 +36,7 @@
     p.description {
       color: var(--app-text-secondary);
       margin-bottom: 0.5em;
+      word-wrap: break-word;
     }
   }
 }

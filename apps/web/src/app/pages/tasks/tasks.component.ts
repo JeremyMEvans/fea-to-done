@@ -13,12 +13,20 @@ export class TasksComponent implements OnInit {
 
   constructor(taskManagerService: TasksManagerService) {
     this.tasks = taskManagerService.tasks.filter(task => task.isCompleted !== true);
+    this.tasks.sort((a, b) => (
+      a.due > b.due) ? 1 : (b.due > a.due) ? -1 : 0);
   }
 
   ngOnInit(): void {
-    console.log("Number of tasks: " + this.tasks.length);
-    this.tasks.forEach((value) => {
-      console.log("Task id: " + value.id);
-    })
+  }
+
+  shortenDescription(description: string) {
+    const maxLength = 98
+    if (description.length > maxLength) {
+      var str = description.substring(0, maxLength - 1) + "...";
+      return str;
+    }
+
+    return description;
   }
 }

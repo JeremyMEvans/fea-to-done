@@ -20,6 +20,10 @@
     }
   }
 
+  .card#add-task-container {
+    margin: auto;
+  }  
+
   .date-container {
     padding: 1em;
     border: 1px solid var(--app-border-color);

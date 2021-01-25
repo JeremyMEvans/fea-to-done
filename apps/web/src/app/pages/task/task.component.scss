@@ -16,4 +16,8 @@
   label:not(:nth-child(1)) {
     margin-top: 1em;
   }
+
+  #task-description {
+    word-wrap: break-word;
+  }
 }

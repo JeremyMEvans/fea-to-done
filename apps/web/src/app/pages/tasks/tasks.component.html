@@ -25,9 +25,9 @@
         </li>
       </ul>
 
-      <!-- task-cards:text-->
+      <!-- task-cards:description-->
       <p class="title">{{ task.title }}</p>
-      <p class="description" *ngIf="task.description">{{ task.description }}</p>
+      <p class="description" *ngIf="task.description">{{ shortenDescription(task.description) }}</p>
       <p class="date">
         <tdn-ui-icon name="calendar" size="m"></tdn-ui-icon
         >{{ task.due | date: 'M/d/yyyy' }}

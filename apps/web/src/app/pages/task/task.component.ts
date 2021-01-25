@@ -25,7 +25,6 @@ export class TaskComponent implements OnInit {
 
   getTask = () => {
     const taskId = Number(window.location.pathname.split('/').pop());
-    console.log("Task id: " + taskId);
     return this.taskService.tasks.find((task) => taskId === task.id);
   };
 

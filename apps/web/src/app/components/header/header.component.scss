@@ -4,11 +4,13 @@ header {
   display: flex;
   align-items: center;
   background: var(--app-bg-color-secondary);
-  padding: 0 2em;
   min-height: 70px;
+  width: 100%;
   font-family: 'Roboto Medium';
   border-bottom: 1px solid var(--app-border-color);
   margin-bottom: 1em;
+  position: fixed;
+  top: 0;
 
   .app-title {
     font-family: 'Roboto Medium';
@@ -18,6 +20,7 @@ header {
   & > div {
     display: flex;
     align-items: center;
+    padding-left: 2em;
 
     tdn-ui-icon {
       margin-right: 0.5em;
@@ -25,10 +28,19 @@ header {
     }
   }
 
+  .page-title {
+    font-size: 20px;
+    line-height: 30px;
+    font-family: 'Roboto Medium';
+    margin-left: auto;
+    padding-left: 127px;
+  }
+
   // right-justify navigation
   nxlp-nav {
     display: flex;
     margin-left: auto;
+    padding-right: 2em;
   }
 }
 
